@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Karaken</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #007BFF; padding: 20px; color: white; text-align: center; }
+        nav { background: #0056b3; display: flex; justify-content: center; padding: 10px; }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        nav a:hover { background-color: #003d80; }
+        section {
+            padding: 40px;
+            display: none;
+        }
+        section.active { display: block; }
+        footer {
+            background: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Karaken — Mahsulot yetkazib beruvchilar platformasi</h1>
+</header>
+
+<nav>
+    <a href="#home" onclick="showSection('home')">Bosh sahifa</a>
+    <a href="#ads" onclick="showSection('ads')">E'lonlar</a>
+    <a href="#login" onclick="showSection('login')">Kirish</a>
+    <a href="#register" onclick="showSection('register')">Ro‘yxatdan o‘tish</a>
+    <a href="#add" onclick="showSection('add')">E'lon qo‘shish</a>
+</nav>
+
+<section id="home" class="active">
+    <h2>Bosh sahifa</h2>
+    <p>Karaken ilovasiga xush kelibsiz! Bu yerda siz mahsulot yetkazib beruvchilarni topishingiz mumkin.</p>
+</section>
+
+<section id="ads">
+    <h2>E'lonlar</h2>
+    <p>Hozircha mavjud e'lonlar ro'yxati.</p>
+</section>
+
+<section id="login">
+    <h2>Kirish</h2>
+    <form>
+        <label>Email:</label><br>
+        <input type="email"><br><br>
+        <label>Parol:</label><br>
+        <input type="password"><br><br>
+        <button type="submit">Kirish</button>
+    </form>
+</section>
+
+<section id="register">
+    <h2>Ro‘yxatdan o‘tish</h2>
+    <form>
+        <label>Ism:</label><br>
+        <input type="text"><br><br>
+        <label>Email:</label><br>
+        <input type="email"><br><br>
+        <label>Parol:</label><br>
+        <input type="password"><br><br>
+        <button type="submit">Ro‘yxatdan o‘tish</button>
+    </form>
+</section>
+
+<section id="add">
+    <h2>Yangi e'lon qo‘shish</h2>
+    <form>
+        <label>Mahsulot nomi:</label><br>
+        <input type="text"><br><br>
+        <label>Tavsif:</label><br>
+        <textarea></textarea><br><br>
+        <label>Aloqa raqami:</label><br>
+        <input type="tel"><br><br>
+        <button type="submit">E'lon joylashtirish</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Karaken. Barcha huquqlar himoyalangan.</p>
+</footer>
+
+<script>
+function showSection(id) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
